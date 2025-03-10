@@ -3,18 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tesla PetDog Trainer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Guess The Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 400px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Tesla PetDog Trainer</h1>
-    <p>Use Arrow keys to move the Dog | Press A/D to move the Tesla Car | Click "Feed" to feed the dog</p>
-    
-    <div class="game-container">
-        <canvas id="gameCanvas" width="800" height="600"></canvas>
-        <button id="feedBtn">Feed Dog 🍖</button>
+    <div class="container">
+        <h2>Guess The Number</h2>
+        <p>Try to guess a number between 1 and 100!</p>
+        <input type="number" id="userGuess" placeholder="Enter your guess">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="message"></p>
     </div>
-
-    <script src="game.js"></script>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        function checkGuess() {
+            let userGuess = document.getElementById("userGuess").value;
+            let message = document.getElementById("message");
+            if (userGuess == randomNumber) {
+                message.innerText = "🎉 Congratulations! You guessed the right number!";
+            } else if (userGuess > randomNumber) {
+                message.innerText = "📉 Too high! Try again.";
+            } else {
+                message.innerText = "📈 Too low! Try again.";
+            }
+        }
+    </script>
 </body>
 </html>
