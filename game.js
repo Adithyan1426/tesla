@@ -3,9 +3,9 @@ const ctx = canvas.getContext("2d");
 
 // Load Images
 const dogImg = new Image();
-dogImg.src = "assets/tesla_dog.png";  
+dogImg.src = "tesla_dog.png";  
 const foodImg = new Image();
-foodImg.src = "assets/food.png";  
+foodImg.src = "food.png";  
 const carImg = new Image();
 carImg.src = "assets/tesla_car.png";  
 
