@@ -7,7 +7,7 @@ dogImg.src = "tesla_dog.png";
 const foodImg = new Image();
 foodImg.src = "food.png";  
 const carImg = new Image();
-carImg.src = "assets/tesla_car.png";  
+carImg.src = "tesla_car.png";  
 
 let dog = { x: 350, y: 480, width: 100, height: 100, speed: 5 };
 let food = { x: Math.random() * 700, y: Math.random() * 300, width: 40, height: 40, visible: false };
